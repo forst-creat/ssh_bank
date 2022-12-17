@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2022-10-18 11:01:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.atguigu.entities.CustPeople" table="t_custpeople">
+        <id name="cpid" type="java.lang.Integer" >
+            <column name="cpid" />
+            <generator class="native" />
+        </id>
+        <property name="cpname" type="java.lang.String">
+            <column name="cpname" />
+        </property>
+        <property name="duty" type="java.lang.String">
+            <column name="duty" />
+        </property>
+        <property name="mobile" type="java.lang.String">
+            <column name="mobile" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+        <many-to-one name="customer" class="com.atguigu.entities.Customer" column="ccpid"></many-to-one>
+    </class>
+</hibernate-mapping>

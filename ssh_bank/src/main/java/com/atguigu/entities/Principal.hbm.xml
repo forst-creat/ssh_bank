@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2022-10-18 11:01:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.atguigu.entities.Principal" table="t_principal">
+        <id name="pid" type="java.lang.Integer">
+            <column name="pid" />
+            <generator class="native" />
+        </id>
+        <property name="pname" type="java.lang.String">
+            <column name="pname" />
+        </property>
+        <property name="dname" type="java.lang.String">
+            <column name="dname" />
+        </property>
+        <property name="identity" type="java.lang.String">
+            <column name="identity" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+        <many-to-one name="customer" class="com.atguigu.entities.Customer" column="cpcid"></many-to-one>
+    </class>
+</hibernate-mapping>

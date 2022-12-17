@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2022-10-18 11:01:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.atguigu.entities.Customer" table="t_customer">
+        <id name="cid" type="java.lang.Integer">
+            <column name="cid" />
+            <generator class="native" />
+        </id>
+        <property name="fullName" type="java.lang.String">
+            <column name="fullName" />
+        </property>
+        <property name="singleName" type="java.lang.String">
+            <column name="singleName" />
+        </property>
+        <property name="programeName" type="java.lang.String">
+            <column name="programeName" />
+        </property>
+        <property name="service" type="java.lang.String">
+            <column name="service" />
+        </property>
+        <property name="jobKind" type="java.lang.String">
+            <column name="jobKind" />
+        </property>
+        <property name="phase" type="java.lang.String">
+            <column name="phase" />
+        </property>
+        <property name="place" type="java.lang.String">
+            <column name="place" />
+        </property>
+        <property name="admin" type="java.lang.String">
+            <column name="admin" />
+        </property>
+        <property name="department" type="java.lang.String">
+            <column name="department" />
+        </property>        
+        <property name="createTime" type="java.util.Date">
+            <column name="createTime" />
+        </property>
+        <property name="startTime" type="java.util.Date">
+            <column name="startTime" />
+        </property>
+        <property name="endTime" type="java.util.Date">
+            <column name="endTime" />
+        </property>
+        <property name="instruction" type="java.lang.String">
+            <column name="instruction" />
+        </property>
+        <property name="target" type="java.lang.String">
+            <column name="target" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+        <property name="effect" type="java.lang.String">
+            <column name="effect" />
+        </property>
+        <set name="setPrincipal" cascade="save-update,delete" >
+            <key column="cpcid"> </key>
+            <one-to-many class="com.atguigu.entities.Principal" />
+        </set>
+        <set name="setCustPeople" cascade="save-update,delete" >
+            <key column="ccpid"></key>
+            <one-to-many class="com.atguigu.entities.CustPeople" />
+        </set>
+         <set name="setPartPrincipal" cascade="save-update,delete">
+            <key column="cppid"></key>
+            <one-to-many class="com.atguigu.entities.PartPrincipal"/>
+        </set>
+    </class>
+</hibernate-mapping>

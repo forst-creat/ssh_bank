@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2022-10-18 11:01:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.atguigu.entities.PartPrincipal" table="t_partprincipal">
+        <id name="ppid" type="java.lang.Integer">
+            <column name="ppid" />
+            <generator class="native" />
+        </id>
+        <property name="ppname" type="java.lang.String">
+            <column name="ppname" />
+        </property>
+        <property name="organization" type="java.lang.String">
+            <column name="organization" />
+        </property>
+        <property name="duty" type="java.lang.String">
+            <column name="duty" />
+        </property>
+        <property name="ppMobile" type="java.lang.String">
+            <column name="ppMobile" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+        <many-to-one name="customer" class="com.atguigu.entities.Customer" column="cppid"></many-to-one>
+    </class>
+</hibernate-mapping>
